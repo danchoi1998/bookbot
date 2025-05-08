@@ -4,7 +4,16 @@ def get_book_text(book):
 
     return book_text
 
+def get_word_count(document):
+    with open(document) as f:
+        text = f.read()
+
+    word_count = len(text.split())
+
+    return word_count
+
+
 def main():
-    print(get_book_text("books/frankenstein.txt"))
+    print(f"{get_word_count("books/frankenstein.txt")} words found in the document")
 
 main()
